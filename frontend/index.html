@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        margin: 20px;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .auth-options {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .auth-option-button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      .auth-option-button:hover {
+        background-color: #45a049;
+      }
+
+      form {
+        margin-bottom: 20px;
+      }
+
+      form h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 5px;
+        color: #666;
+      }
+
+      form input[type="text"],
+      form input[type="password"] {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 0.9rem;
+      }
+
+      form button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
+
+      form button:hover {
+        background-color: #45a049;
+      }
+
+      .tasks-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+
+      .tasks-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .tasks-container ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .task-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo List App</h1>
+
+      <div id="authOptions" class="auth-options">
+        <button id="showRegisterForm" class="auth-option-button">
+          Register
+        </button>
+        <button id="showLoginForm" class="auth-option-button">Login</button>
+      </div>
+
+      <form id="registerForm" class="auth-form">
+        <h2>Register</h2>
+        <label for="registerName">Username:</label>
+        <input
+          type="text"
+          id="registerName"
+          name="registerName"
+          autocomplete="off"
+          required
+        />
+        <br />
+        <label for="registerPassword">Password:</label>
+        <input
+          type="password"
+          id="registerPassword"
+          name="registerPassword"
+          autocomplete="off"
+          required
+        />
+        <br />
+        <button type="submit">Register</button>
+      </form>
+
+      <form id="loginForm" class="auth-form" style="display: none">
+        <h2>Login</h2>
+        <label for="loginName">Username:</label>
+        <input
+          type="text"
+          id="loginName"
+          name="loginName"
+          autocomplete="off"
+          required
+        />
+        <br />
+        <label for="loginPassword">Password:</label>
+        <input
+          type="password"
+          id="loginPassword"
+          name="loginPassword"
+          autocomplete="off"
+          required
+        />
+        <br />
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="addTaskForm" style="display: none">
+        <h2>Add Task</h2>
+        <label for="taskDescription">Task Description:</label>
+        <input
+          type="text"
+          id="taskDescription"
+          name="taskDescription"
+          autocomplete="off"
+          required
+        />
+        <br />
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+
+    <div class="tasks-container" id="tasksContainer" style="display: none">
+      <h2>My Tasks</h2>
+      <ul id="tasksList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
