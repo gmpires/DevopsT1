@@ -22,3 +22,4 @@ Como Usar
   Execute docker compose up 
   
   Acesse http://localhost
+  
